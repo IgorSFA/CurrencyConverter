@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Hello World</title>
+    </head>
+    <body>
+        <h1>Currency Converter</h1>
+        <h2>From</h2>
+        <select id="from">
+            <option value="EUR">EUR</option>
+            <option value="BRL">BRL</option>
+            <option value="USD">USD</option>
+        </select>
+        <textarea id="fromValue"></textarea>
+        <h2>To</h2>
+        <select id="to">
+            <option value="EUR">EUR</option>
+            <option value="BRL">BRL</option>
+            <option value="USD">USD</option>
+        </select>
+        <textarea id="toValue"></textarea>
+        <button onclick="showcurrency()">Show Currency</button>
+        <textarea id="show"></textarea>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
