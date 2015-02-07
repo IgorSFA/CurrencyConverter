@@ -7,8 +7,7 @@
     "name": "Currency Converter",
     "description": "An app to convert money corrency.",
     "developer": {
-        "name": "Igor",
-        "url": "http://google.com"
+        "name": "Igor"
     },
     "icons": {
         "60": "/icon/icon-60.png",
