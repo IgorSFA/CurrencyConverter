@@ -21,6 +21,7 @@ var app = {
 };
 
 app.initialize();
+var script;
 
 function showcurrency(){
     var from = document.getElementById("from").value;
@@ -28,6 +29,26 @@ function showcurrency(){
     var fromValue = document.getElementById("fromValue").value;
     var toValue = document.getElementById("toValue").value;
     var show = document.getElementById("show");
-    var getCurrent = "http://rate-exchange.appspot.com/currency?from="+from+"&to="+to;
-    show.value = getCurrent;
+    var url = 'http://jsonrates.com/get/?from='+from+'&to='+to+'&callback=get';
+    
+    var request = new XMLHttpRequest();
+    request.open('GET', url, true);
+
+    request.onload = function() {
+      if (request.status >= 200 && request.status < 400) {
+        // Success!
+        alert("entrei");
+        var data = JSON.parse(request.responseText);
+      } else {
+        // We reached our target server, but it returned an error
+
+      }
+    };
+
+    request.onerror = function() {
+      // There was a connection error of some sort
+    };
+
+    request.send();
+
 }
