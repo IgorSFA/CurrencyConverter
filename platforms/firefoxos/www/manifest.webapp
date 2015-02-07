@@ -4,11 +4,11 @@
         "*"
     ],
     "version": "0.0.1",
-    "name": "HelloCordova",
-    "description": "A sample Apache Cordova application that responds to the deviceready event.",
+    "name": "Currency Converter",
+    "description": "An app to convert money corrency.",
     "developer": {
-        "name": "Apache Cordova Team",
-        "url": "http://cordova.io"
+        "name": "Igor",
+        "url": "http://google.com"
     },
     "icons": {
         "60": "/icon/icon-60.png",
