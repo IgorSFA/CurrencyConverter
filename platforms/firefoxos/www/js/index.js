@@ -44,5 +44,5 @@ function showcurrency(){
 }
 
 function applyTax(r){
-    return fromValue.value * r;
+    return (fromValue.value * r).toFixed(2);
 }
