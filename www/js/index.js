@@ -22,33 +22,27 @@ var app = {
 
 app.initialize();
 var script;
+var rate;
+
+var fromValue = document.getElementById("fromValue");
+var toValue = document.getElementById("toValue");
+
+function get(json) {
+    rate = json['rate'];
+    toValue.value = applyTax(rate);
+}
 
 function showcurrency(){
     var from = document.getElementById("from").value;
     var to = document.getElementById("to").value;
-    var fromValue = document.getElementById("fromValue").value;
-    var toValue = document.getElementById("toValue").value;
-    var show = document.getElementById("show");
     var url = 'http://jsonrates.com/get/?from='+from+'&to='+to+'&callback=get';
-    
-    var request = new XMLHttpRequest();
-    request.open('GET', url, true);
 
-    request.onload = function() {
-      if (request.status >= 200 && request.status < 400) {
-        // Success!
-        alert("entrei");
-        var data = JSON.parse(request.responseText);
-      } else {
-        // We reached our target server, but it returned an error
+    var script = document.createElement('script');
+    script.src = url;
+    document.head.appendChild(script);
 
-      }
-    };
+}
 
-    request.onerror = function() {
-      // There was a connection error of some sort
-    };
-
-    request.send();
-
+function applyTax(r){
+    return fromValue.value * r;
 }
